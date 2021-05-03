@@ -2,10 +2,8 @@
   "name": "@pdf-lib/fontkit",
   "version": "1.1.0",
   "description": "An advanced font engine for Node and the browser",
-  "main": "dist/fontkit.umd.js",
-  "unpkg": "dist/fontkit.umd.min.js",
-  "module": "dist/fontkit.es.js",
   "types": "fontkit.d.ts",
+  "main": "lib/index.js",
   "scripts": {
     "make": "node Makefile.js",
     "clean": "node Makefile.js clean",
@@ -13,6 +11,11 @@
     "coverage": "cross-env BABEL_ENV=cover nyc mocha"
   },
   "dependencies": {
+    "@pdf-lib/brotli": "^0.0.0",
+    "@pdf-lib/restructure": "^0.0.1",
+    "@pdf-lib/unicode-properties": "^0.0.1",
+    "deep-equal": "^1.0.0",
+    "iconv-lite": "^0.4.13",
     "pako": "^1.0.6"
   },
   "devDependencies": {
@@ -23,9 +26,6 @@
     "@babel/plugin-proposal-decorators": "^7.2.2",
     "@babel/preset-env": "^7.2.0",
     "@babel/register": "^7.0.0",
-    "@pdf-lib/brotli": "^0.0.0",
-    "@pdf-lib/restructure": "^0.0.1",
-    "@pdf-lib/unicode-properties": "^0.0.1",
     "@rollup/plugin-babel": "^5.0.0",
     "@rollup/plugin-commonjs": "^11.1.0",
     "@rollup/plugin-inject": "^4.0.2",
@@ -37,11 +37,9 @@
     "clone": "^1.0.1",
     "codepoints": "^1.2.0",
     "concat-stream": "^1.4.6",
-    "deep-equal": "^1.0.0",
     "dfa": "^1.0.0",
     "esdoc": "^0.4.8",
     "esdoc-es7-plugin": "0.0.3",
-    "iconv-lite": "^0.4.13",
     "mocha": "^2.0.1",
     "nyc": "^10.3.2",
     "rollup": "^2.10.2",
