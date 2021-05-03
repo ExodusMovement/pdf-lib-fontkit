@@ -4,6 +4,9 @@
   "description": "An advanced font engine for Node and the browser",
   "types": "fontkit.d.ts",
   "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "make": "node Makefile.js",
     "clean": "node Makefile.js clean",
