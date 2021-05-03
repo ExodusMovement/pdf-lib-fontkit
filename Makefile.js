@@ -29,26 +29,13 @@ target.clean = () => {
 
 /* =============================== Release ================================== */
 
-target.releaseNext = () => {
-  const version = `${packageJson.version}@next`;
-  console.log('Releasing version', version);
-
+target.release = () => {
   target.all();
+  const tag = `v${packageJson.version}`;
+  console.log('Releasing version', tag);
+  execFileSync('git', ['tag', tag]);
+  execFileSync('git', ['push', '--tags']);
 
-  execFileSync('yarn', ['publish', '--tag', 'next', '--access', 'public'], { stdio: 'inherit' });
-};
-
-target.releaseLatest = async () => {
-  const currentBranch = exec('git rev-parse --abbrev-ref HEAD').stdout.trim();
-  if (currentBranch !== 'master') {
-    console.error('Must be on `master` branch to cut an @latest release.');
-    return;
-  }
-
-  const version = `${packageJson.version}@latest`;
-  console.log('Releasing version', version);
-
-  target.all();
-
-  execFileSync('yarn', ['publish', '--tag', 'latest', '--access', 'public'], { stdio: 'inherit' });
+  execFileSync('yarn', ['publish'], { stdio: 'inherit' });
+  console.log('🎉   Release of', tag, 'complete! 🎉');
 };
