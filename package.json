@@ -15,8 +15,7 @@
     "@pdf-lib/restructure": "^0.0.1",
     "@pdf-lib/unicode-properties": "^0.0.1",
     "deep-equal": "^1.0.0",
-    "iconv-lite": "^0.4.13",
-    "pako": "^1.0.6"
+    "iconv-lite": "^0.4.13"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.0",

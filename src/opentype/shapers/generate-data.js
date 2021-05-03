@@ -5,8 +5,7 @@
 import codepoints from 'codepoints';
 import fs from 'fs';
 import UnicodeTrieBuilder from 'unicode-trie/builder';
-import pako from 'pako';
-import * as base64 from 'base64-arraybuffer';
+import zlib from 'zlib';
 
 let ShapingClasses = {
   Non_Joining: 0,
@@ -35,5 +34,5 @@ for (let i = 0; i < codepoints.length; i++) {
 // Trie is serialized suboptimally as JSON so it can be loaded via require,
 // allowing unicode-properties to work in the browser
 const filePath = __dirname + '/trie.json';
-const jsonBase64DeflatedTrie = JSON.stringify(base64.encode(pako.deflate(trie.toBuffer())));
+const jsonBase64DeflatedTrie = JSON.stringify(zlib.deflateSync(Buffer.from(trie.toBuffer())).toString('base64'));
 fs.writeFileSync(filePath, jsonBase64DeflatedTrie);

@@ -2,8 +2,7 @@ import codepoints from 'codepoints';
 import fs from 'fs';
 import UnicodeTrieBuilder from 'unicode-trie/builder';
 import compile from 'dfa/compile';
-import pako from 'pako';
-import * as base64 from 'base64-arraybuffer';
+import zlib from 'zlib';
 
 import {CATEGORIES, POSITIONS, CONSONANT_FLAGS} from './indic-data';
 
@@ -206,12 +205,12 @@ for (let i = 0; i < codepoints.length; i++) {
 // Trie is serialized suboptimally as JSON so it can be loaded via require,
 // allowing unicode-properties to work in the browser
 const trieFilePath = __dirname + '/trieIndic.json'
-const jsonBase64DeflatedTrie = JSON.stringify(base64.encode(pako.deflate(trie.toBuffer())));
+const jsonBase64DeflatedTrie = JSON.stringify(zlib.deflateSync(Buffer.from(trie.toBuffer())).toString('base64'));
 fs.writeFileSync(trieFilePath, jsonBase64DeflatedTrie);
 
 let stateMachine = compile(fs.readFileSync(__dirname + '/indic.machine', 'utf8'), symbols);
 
 const indicFilePath = __dirname + '/indic.json';
 const stateMachineJsonBytes = JSON.stringify(stateMachine).split('').map(c => c.charCodeAt(0));
-const jsonBase64DeflatedIndic = JSON.stringify(base64.encode(pako.deflate(stateMachineJsonBytes)));
+const jsonBase64DeflatedIndic = JSON.stringify(zlib.deflateSync(Buffer.from(stateMachineJsonBytes)).toString('base64'));
 fs.writeFileSync(indicFilePath, jsonBase64DeflatedIndic);
