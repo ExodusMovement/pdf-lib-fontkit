@@ -12,4 +12,4 @@ fontkit.registerFormat(WOFF2Font);
 fontkit.registerFormat(TrueTypeCollection);
 fontkit.registerFormat(DFont);
 
-export default fontkit;
+module.exports = fontkit;
