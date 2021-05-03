@@ -1,5 +1,5 @@
 {
-  "name": "@pdf-lib/fontkit",
+  "name": "@exodus/pdf-lib-fontkit",
   "version": "1.1.0",
   "description": "An advanced font engine for Node and the browser",
   "types": "fontkit.d.ts",
@@ -56,7 +56,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/Hopding/fontkit.git"
+    "url": "git://github.com/ExodusMovement/pdf-lib-fontkit.git"
   },
   "keywords": [
     "opentype",
@@ -72,8 +72,8 @@
     "Devon Govett <devongovett@gmail.com> (http://badassjs.com/)"
   ],
   "bugs": {
-    "url": "https://github.com/Hopding/fontkit/issues"
+    "url": "https://github.com/ExodusMovement/pdf-lib-fontkit/issues"
   },
   "license": "MIT",
-  "homepage": "https://github.com/Hopding/fontkit"
+  "homepage": "https://github.com/ExodusMovement/pdf-lib-fontkit"
 }
