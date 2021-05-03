@@ -820,6 +820,13 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
+"@exodus/pdf-lib-unicode-properties@0.0.1-exodus0":
+  version "0.0.1-exodus0"
+  resolved "https://registry.yarnpkg.com/@exodus/pdf-lib-unicode-properties/-/pdf-lib-unicode-properties-0.0.1-exodus0.tgz#f6b172a978b829c952fadae169dc38075fe9af85"
+  integrity sha512-ViCK29qrj7NdaapUE8IkW/oklhBpYcNZkGA5wQcazA4USqPQZ6ofuJmKDWWRAdwx3RfDv4iIbi0OyBRRzZPwXg==
+  dependencies:
+    unicode-trie "^0.3.0"
+
 "@pdf-lib/brotli@^0.0.0":
   version "0.0.0"
   resolved "https://registry.yarnpkg.com/@pdf-lib/brotli/-/brotli-0.0.0.tgz#18a5309649d4574dab97fa65c5b49cf50ed8ddb8"
@@ -833,15 +840,6 @@
   integrity sha512-CgCG7w7GiYxBLo8AyjP3viIiyPyYuoZWXczNTxZQtElXWQN5Vw8A2TGcrvwstCwOrJHfT4KeNGpEvLApVYoBuA==
   dependencies:
     browserify-optional "^1.0.0"
-
-"@pdf-lib/unicode-properties@^0.0.1":
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/@pdf-lib/unicode-properties/-/unicode-properties-0.0.1.tgz#7f4a6a5ad7f9ec889449dcc51317217230b2d01f"
-  integrity sha512-zPhtCnQ4YuR2CX0h7zqBN7dPe/XN2dL71qi7Xh8JQON2IibogLdezwlEn1AIzs3m/+kjeKxXsQClN/D4U2i5NA==
-  dependencies:
-    base64-arraybuffer "^0.1.5"
-    pako "^1.0.6"
-    unicode-trie "^0.3.0"
 
 "@rollup/plugin-babel@^5.0.0":
   version "5.0.0"
@@ -3910,11 +3908,6 @@ p-try@^2.0.0:
 pako@^0.2.5:
   version "0.2.9"
   resolved "https://registry.yarnpkg.com/pako/-/pako-0.2.9.tgz#f3f7522f4ef782348da8161bad9ecfd51bf83a75"
-
-pako@^1.0.6:
-  version "1.0.11"
-  resolved "https://registry.yarnpkg.com/pako/-/pako-1.0.11.tgz#6c9599d340d54dfd3946380252a35705a6b992bf"
-  integrity sha512-4hLB8Py4zZce5s4yd9XzopqwVv/yGNhV1Bl8NTmCq1763HeK2+EwVTv+leGeL13Dnh2wfbqowVPXCIO0z4taYw==
 
 parse-asn1@^5.0.0:
   version "5.1.1"
